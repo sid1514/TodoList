@@ -1,0 +1,22 @@
+.tasks_container{
+    padding:100px;
+    text-align: center;
+}
+.task_structure{
+   width: max-content;
+    height:max-content;
+    display: flex;
+   
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+   
+ 
+   padding-bottom: 20px;
+    background-size: 100%;
+}
+.task_table td{
+    padding: 20px;
+}
+
