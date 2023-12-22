@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/todoBack/node_modules
+/todoBack/config.env
 # testing
 /coverage
 
