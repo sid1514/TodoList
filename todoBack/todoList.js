@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 const TodoList=mongoose.Schema({
 
 
-    Tid:{type:Number},
+    Tid:{type:String},
     TName:{type:String},
     TDate:{type:Date},
 })

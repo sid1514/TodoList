@@ -78,26 +78,39 @@ route.get("/getMaxTaskId", async (req, res) => {
       console.log(error.message)
     }
   })
+ route.delete("/deleteAll",async(req,res)=>{
+  try{
+    await Todo.deleteMany({});
+  }catch(e){
+    console.log(e)
+  }
+ })
 
-  route.put("/updateTask/:nm",async(req,res)=>{
-    try{
-      const {nm}=req.params;
-   let Data=await Todo.findOne({TName:nm})
-      if(Data){
-        let id= Data._id;
-       
-        await Todo.findByIdAndUpdate(id,req.body,{
-          new:true
-        });
-       
-      res.status(200).json({ success: true, message: 'Task updated successfully'});
-      }else{
-        res.send("not found")
-      }
-    }catch(e){
-      console.log(e);
+ /*
+ route.put("/updateTask/:Tname", async (req, res) => {
+  try {
+    const { Tname } = req.params;
+    const { TName } = req.body;
+ const updatedTask = await Todo.findByIdAndUpdate(
+      Tname,
+      { TName: TName },
+      { new: true }
+    );
+   if (updatedTask) {
+      res.status(200).json({
+        success: true,
+        message: 'Task updated successfully',
+        updatedTask: updatedTask,
+      });
+    } else {
+      res.status(404).json({ success: false, message: 'Task not found' });
     }
-  })
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+*/
 
   
 module.exports=route;

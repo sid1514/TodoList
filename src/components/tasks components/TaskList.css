@@ -1,6 +1,16 @@
 .tasks_container{
-    padding:100px;
+   
+    padding-top:100px;
+    padding-left: 100px;
     text-align: center;
+    color:white;
+    background-color:rgb(107, 176, 199);
+    text-align: center;
+    margin: 20px;
+   
+    width: 97%;
+    background-size: 100% 100%;
+    
 }
 .task_structure{
    width: max-content;
@@ -19,4 +29,16 @@
 .task_table td{
     padding: 20px;
 }
+
+.tasks{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:100px;
+    margin:20px;
+    padding-left:30px ;
+    padding-right:30px ;
+    justify-content: space-between ;
+    color: black;
+}
+
 
