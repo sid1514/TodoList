@@ -15,7 +15,7 @@ const [Emessage,setEmessage]=useState(false)
 const [toggleBtn,setToggleBtn]=useState(true)
 const [editTask,seteditTask]=useState();
   try{ 
-    fetch("http://localhost:5000/getTasks")
+    fetch("https://todoback-15yc.onrender.com/getTasks")
    .then((res)=>res.json())
    .then((temp)=>setTasks(temp))
    .catch((e)=>console.log(e))
@@ -24,13 +24,13 @@ const [editTask,seteditTask]=useState();
    console.error('Error fetching data:', error)
   }
   
-     
+     console.log(tasks)
 
 
    useEffect(()=>{
    try{ 
     
-   fetch("http://localhost:5000/getMaxTaskId")
+   fetch("https://todoback-15yc.onrender.com/getMaxTaskId")
     .then((res)=>res.json())
     .then((temp)=>setMaxTask(temp))
     .catch((e)=>console.log(e))
@@ -58,7 +58,7 @@ const [editTask,seteditTask]=useState();
         
         //const Tid = Maxtask[0].Tid + 1; 
         const Tid =actualDate.getTime().toString();
-       await axios.post("http://localhost:5000/addTask", { Tid, TName: taskName,
+       await axios.post(`https://todoback-15yc.onrender.com/addTask`, { Tid, TName: taskName,
         TDate:todayD })
         .then(response => {
           setTask(' ')
@@ -71,7 +71,7 @@ const [editTask,seteditTask]=useState();
           
               if(!toggleBtn){
 
-                await  axios.delete(`http://localhost:5000/deleteTask/${editTask.TName}`);
+                await  axios.delete(`https://todoback-15yc.onrender.com/deleteTask/${editTask.TName}`);
               }
               setTask('')
           }else{
@@ -84,7 +84,7 @@ const [editTask,seteditTask]=useState();
     const deleteTask=async(nm)=>{
   
       try {
-    await axios.delete(`http://localhost:5000/deleteTask/${nm}`);
+    await axios.delete(`https://todoback-15yc.onrender.com/deleteTask/${nm}`);
     
   } catch (error) {
     console.error('Error deleting task:', error);
@@ -94,7 +94,7 @@ const [editTask,seteditTask]=useState();
 
     const deletAllTask=()=>{
       try{
-        axios.delete('http://localhost:5000/deleteAll')
+        axios.delete(`https://todoback-15yc.onrender.com/deleteAll`)
       }catch(e){
         console.log(e)
       }
