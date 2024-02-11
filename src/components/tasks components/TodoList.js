@@ -92,9 +92,9 @@ const [editTask,seteditTask]=useState();
   }
     }
 
-    const deletAllTask=()=>{
+    const deletAllTask=async()=>{
       try{
-        axios.delete(`https://todoback-15yc.onrender.com/deleteAll`)
+        await axios.delete(`https://todoback-15yc.onrender.com/deleteAll`)
       }catch(e){
         console.log(e)
       }
@@ -114,11 +114,11 @@ const [editTask,seteditTask]=useState();
     return(
         <>
         <div className="tasks_container">
-        <h1 style={{fontSize:"50px",fontFamily:"cursive"}}>To-Do List</h1>
-        <p style={{fontSize:"20px",fontFamily:"cursive",color:"ButtonText"}}>Your task's list and reminder </p>
+        <h1 className="todo_title" style={{fontSize:"50px",fontFamily:"cursive"}}>To-Do List</h1>
+        <p id="title_belowText" >Your task's list and reminder </p>
         
         <section>
-        <Input type="text" value={Tname} onChange={(e)=>setTask(e.target.value) } style={{width:"30%",margin:"10px",height:"50px"}}></Input>
+        <Input type="text" id="input_task" value={Tname} onChange={(e)=>setTask(e.target.value) } ></Input>
        { toggleBtn ?<Button onClick={add} inverted color='black' size="small"><h3>Add task</h3></Button> : <Icon name="edit" size="large" onClick={add}/>}
         <Button  color='red' size="small" onClick={deletAllTask}><h3>Clear List</h3></Button>
        { Emessage? <Message negative size="tiny" color="red" style={{width:"200px"}}>

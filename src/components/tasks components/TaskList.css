@@ -1,20 +1,21 @@
 .tasks_container{
    
     padding-top:100px;
-    padding-left: 100px;
+    padding-left: 10vh;
     text-align: center;
     color:white;
     background-color:rgb(107, 176, 199);
     text-align: center;
     margin: 20px;
    
-    width: 97%;
+    width: 100%;
+    height: 100%;
     background-size: 100% 100%;
     
 }
 .task_structure{
-   width: max-content;
-    height:max-content;
+   width: min-content;
+    height:min-content;
     display: flex;
    
     font-size: large;
@@ -39,6 +40,38 @@
     padding-right:30px ;
     justify-content: space-between ;
     color: black;
+    width:min-content;
 }
+#title_belowText{
+    color:black;
+    font-family: cursive;
+    font-size: large;
+}
+#input_task{
+    height:min-content;
+}
+@media (max-width:900px) {
+    .tasks_container{
+        background-color: rgb(20, 20, 63);
+        background-size: cover;
+    }
+    #title_belowText{
+        color:white;
+        font-size: small;
+    }
 
-
+    .task_structure{
+        width: 20vh;
+         height:20vh;
+         display: flex;
+        
+         font-size: small;
+         font-weight: 300;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         align-items: center;
+        
+      
+        padding-bottom: 20px;
+         background-size: 100%;
+     }
+}
